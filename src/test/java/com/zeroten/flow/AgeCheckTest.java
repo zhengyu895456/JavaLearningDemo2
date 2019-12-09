@@ -12,6 +12,7 @@ public class AgeCheckTest {
         Assert.assertEquals(AgeCheck.getAgeName(7), "少年");
         Assert.assertEquals(AgeCheck.getAgeName(20), "青年");//when
     }//then
+    @Test
     public void testAgeCheck2() {
         Assert.assertEquals(AgeCheck.getAgeName(6), "儿童");//given
         Assert.assertEquals(AgeCheck.getAgeName(7), "少年");
