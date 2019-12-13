@@ -78,4 +78,22 @@ public class ArrayTest {
         System.arraycopy(arr2,arr2.length - 3, arr1,arr1.length-3,3);
         System.out.println("arr1 = " + Arrays.toString(arr1));
     }
+    @Test
+    public void testFill(){
+        //定义一个大小为10的int数组，并将数组全部初始化为5，打印数组；
+        //然后将数组后三位赋值为3，再次打印数组。
+        int[] arr = new int[10];
+        //for (int index = 0; index < arr.length; index++){
+        //    arr[index] = 5;
+        //}
+        Arrays.fill(arr,5);
+        System.out.println(Arrays.toString(arr));
+        //for (int index = arr.length - 3; index < arr.length; index++){
+        //    arr[index] = 3;
+        //}
+        Arrays.fill(arr,arr.length - 3, arr.length, 3);
+        System.out.println(Arrays.toString(arr));
+        Arrays.fill(arr,3,3,3);
+        System.out.println(Arrays.toString(arr));
+    }
 }
