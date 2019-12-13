@@ -108,4 +108,60 @@ public class ArrayTest {
         Arrays.sort(arr);
         System.out.println(Arrays.toString(arr));
     }
+    @Test
+    public void testDuoWei(){
+        //定义一个二维数组，第一维表示用户，第二维表示用户的具体信息
+        String[][] users = new String[5][];
+        users[0] = new String[4];
+        users[0][0] = "001";
+        users[0][1] = "张三";
+        users[0][2] = "男";
+        users[0][3] = "25";
+        users[1] = new String[3];
+        users[1][0] = "002";
+        users[1][1] = "李四";
+        users[1][2] = "女";
+        for(int index = 0; index < users.length; index++){
+            System.out.println(Arrays.toString(users[index]));
+        }
+        for(String[] user:users){
+            System.out.println(Arrays.toString(user));
+        }
+        Arrays.asList(users).forEach(user -> System.out.println(Arrays.toString(user)));
+    }
+    public int[] twoSum(int[] nums, int target){
+        for (int index = 0; index < nums.length - 1; index++){
+            for(int twoIndex = index + 1; twoIndex < nums.length; twoIndex++){
+                if (nums[index] + nums[twoIndex] == target){
+                    return new int[] {index, twoIndex};
+                }
+            }
+        }
+        return null;
+    }
+    public int[] twoSum2(int[] nums, int target){
+        System.out.println("传入数组：" + Arrays.toString(nums));
+        Arrays.sort(nums);
+        System.out.println("排序数组：" + Arrays.toString(nums));
+        for (int index = 0; index < nums.length - 1; index++){
+            if (nums[index] >= target){
+                return null;
+            }
+            for (int twoIndex = index + 1; twoIndex < nums.length; twoIndex++){
+                if (nums[twoIndex] > target){
+                    break;
+                }
+                if (nums[index] + nums[twoIndex] == target){
+                    return new int[]{index, twoIndex};
+                }
+            }
+        }
+        return null;
+    }
+    @Test
+    public void testTwoSum(){
+        int[] intArray = {2,7,11,15};
+        int target = 9;
+        System.out.println(Arrays.toString(twoSum(intArray,target)));
+    }
 }
