@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class MapTest {
+public class HashMapTest {
     /**
      * 内容
      *
